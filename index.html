@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue 3 v-others</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <script src="https://unpkg.com/vue@3"></script>
+
+    <div id="app">
+
+        <header>
+            <nav>
+                <ul>
+                    <li>
+                        Home
+                    </li>
+                    <li>
+                        Blog
+                    </li>
+                    <li>
+                        News
+                    </li>
+                    <li>
+                        Maps
+                    </li>
+                    <li>
+                        Pages
+                    </li>
+                </ul>
+                <ul v-if="isUserLogged()">
+                    <li>
+                        Register
+                    </li>
+                    <li>
+                        Login
+                    </li>
+                </ul>
+
+                <ul v-else>
+                    <li>
+                        Ginettina
+                    </li>
+                    <li>
+                        Inbox
+                    </li>
+                    <li>
+                        My Profile
+                    </li>
+                    <li>
+                        Logout
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <h1>
+                Vue v-if
+            </h1>
+            <div>
+                <p class="blue" v-if="active === true">
+                    Variabile active e' true
+                </p>
+                <p class="magenta" v-else>
+                    Variabile active e' false
+                </p>
+            </div>
+            <div>
+                <button @click="invertActive()">
+                    Inverter!
+                </button>
+            </div>
+            <ul>
+                <!-- names.forEach((elemento) => {}) -->
+                <li v-for="(name, index) in names">
+                    {{ name }} -- {{ index }}
+                </li>
+            </ul>
+        </main>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
